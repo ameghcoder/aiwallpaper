@@ -1,4 +1,5 @@
-/temporaryFiles
-/jpeg
-/image
-/webp
+temporaryFiles/
+jpeg/
+image/
+webp/
+pwapi/temp.txt
