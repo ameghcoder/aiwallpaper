@@ -1,0 +1,21 @@
+{
+    "name": "aiwallpaper.online",
+    "short_name": "aiwallpaper.online",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192_v01.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-256x256_v01.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#000602",
+    "background_color": "#000602",
+    "start_url": "https://aiwallpaper.online",
+    "display": "standalone"
+}
+

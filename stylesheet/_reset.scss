@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --back-clr : #202124;
+    --back-clr-lite : #151210;
+    --text-clr : white;
+    --text-clr-lite : silver;
+    --border : #4a4a4a;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--back-clr);
+    color: var(--text-clr);
+    font-family: "Poppins", sans-serif, 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+}
+
+a, input, select, button{
+    text-decoration: none;
+    color: var(--text-clr);
+}
+
+// icons
+.instagram{
+    background-image: url('/assets/instagram.png');
+}
+.twitter{
+    background-image: url('/assets/twitter.png');
+}
+.facebook{
+    background-image: url('/assets/facebook.png');
+}
+.hamburger{
+    background-image: url('/assets/hamburger.png');
+}
+.search{
+    background-image: url('/assets/search.png');
+}
+.s-logo{
+    background-image: url('/assets/s-logo.png');
+}
+.whatsapp{
+    background-image: url('/assets/whatsapp.png');
+}
+.icon-size{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
+.icon-size-s{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+.icon-settings{
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}

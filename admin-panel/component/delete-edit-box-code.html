@@ -1,0 +1,46 @@
+<div class="ed-show-box">
+    <div class="edsb-inside">
+        <div class="edsbi-top">
+            <div class="edsb-close-btn" onclick="document.querySelector('.ed-show-box').style.transform='scale(0)'">×</div>
+        </div>
+        <div class="edsbi-btm">
+            <div class="edsbi-inside">
+                <div class="edsbib-top-left">
+                    <img class="edsbib-img" src="">
+                </div>
+                <div class="edsbib-top-right">
+                    <div class="view-and-download-number-disabled">
+                        <div>
+                            <strong>ID : </strong>
+                            <em class="edsbib-id" style="font-family : monospace;">00</em>
+                        </div>
+                    </div>
+                    <strong>Title</strong>
+                    <input type="text" name="update-title" id="update-title" placeholder="Enter new Title" value="">
+                    <strong>Keywords :</strong>
+                    <strong>Keywords Length : <em class="_keyword_length"></em>, Not more than 250 characters</strong>
+                    <textarea name="update-tags" id="update-tags" cols="30" rows="10" placeholder="Enter new keywords"></textarea>
+                    <strong>Description :</strong>
+                    <strong>Description Length : <em class="_description_length"></em>, Not more than 160 characters or Less than 100 characters</strong>
+                    <textarea name="update-description" id="update-description" cols="30" rows="10" placeholder="Enter new description"></textarea>
+                    <button type="button" class="edit-this-wallpaper-info">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="del-show-box">
+    <div class="delsb-inside">
+        <div class="delsbi-top">
+            <div class="delsbi-close-btn" onclick="document.querySelector('.del-show-box').style.transform='scale(0)'">×</div>
+        </div>
+        <div class="delsbi-btm">
+            <p>Do you really want to delete this Wallpaper?</p>
+            <p>You lose :- <br>1. Wallpaper<br>2. Wallpaper Page<br>3. Complete data of Wallpaper</p>
+            <div class="flex">
+                <button type="button" data-id="" class="yes-delete-this">Delete</button>
+                <button type="button" onclick="document.querySelector('.del-show-box').style.transform='scale(0)'" class="no-dont-delete">Back</button>
+            </div>
+        </div>
+    </div>
+</div>

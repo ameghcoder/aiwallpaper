@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    transition: all 0.2s ease-in-out;
+}
+:root{
+    --back-clr : #50423f;
+    // --fore-clr : #360000;
+    // --fore-clr : #151210;
+    --fore-clr : #2e2e2e;
+    --text-clr : #f3f3f3;
+    --border : #151210;
+    --font-family : "Poppins", system-ui, 'Times New Roman', Times, serif;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--back-clr);
+    color: var(--text-clr);
+    font-size: 100%;
+}
+
+button{
+    cursor: pointer;
+}
+
+a{
+    color: var(--text-clr);
+    text-decoration: none;
+}

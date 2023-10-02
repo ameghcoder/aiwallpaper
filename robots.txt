@@ -1,0 +1,15 @@
+User-agent: Linguee Bot
+Disallow: /
+
+User-agent: Screaming Frog SEO Spider
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: *
+Allow: /
+Disallow: /admin-panel/
+
+Sitemap: https://aiwallpaper.online/sitemap.xml
+Sitemap: https://aiwallpaper.online/imgSitemap.xml

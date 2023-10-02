@@ -1,0 +1,37 @@
+<header class="left-header" style="z-index: 100;">
+    <div class="web-logo">
+        <i class="icon-nes logo icon-settings" title="Website Logo"></i>
+    </div>
+    <nav class="lh-nav">
+        <a href="./" title="Home"><i class="icon-settings icon-nes home"></i> <i class="text-of-a">Home</i></a>
+        <a href="./edit" title="Edit"><i class="icon-settings icon-nes edit"></i> <i class="text-of-a">Edit</i></a>
+        <a href="./upload" title="Upload"><i class="icon-settings icon-nes upload"></i> <i class="text-of-a">Upload</i></a> 
+        <!-- <a href="./message" title="Upload"><i class="icon-settings icon-nes chat"></i> <i class="text-of-a">Messages</i></a>  -->
+        <a href="./sitemap" title="Upload"><i class="icon-settings icon-nes sitemap"></i> <i class="text-of-a">Sitemap</i></a> 
+        <a href="./about" title="About"><i class="icon-settings icon-nes about"></i> <i class="text-of-a">About</i></a>
+    </nav>
+</header>
+
+<script>
+    let hamburger = document.querySelector('.hamburger-box');
+    let ham_span_01 = document.querySelector('.ham-span-01');
+    let ham_span_02 = document.querySelector('.ham-span-02');
+    let ham_span_03 = document.querySelector('.ham-span-03');
+    let left_header = document.querySelector('header.left-header');
+    let left_open = false;
+    hamburger.addEventListener('click', ()=>{
+        if(left_open){
+            ham_span_01.classList.remove('new-ham-span-01');
+            ham_span_02.classList.remove('new-ham-span-02');
+            ham_span_03.classList.remove('new-ham-span-03');
+            left_header.style.left = "-260px";
+            left_open = false;
+        } else{
+            ham_span_01.classList.add('new-ham-span-01');
+            ham_span_02.classList.add('new-ham-span-02');
+            ham_span_03.classList.add('new-ham-span-03');
+            left_header.style.left = "0px";
+            left_open = true;
+        }
+    })
+</script>
