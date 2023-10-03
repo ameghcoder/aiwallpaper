@@ -346,6 +346,7 @@ $(document).ready(() => {
         edit_data(form).then((val) => {
             let json_string = JSON.parse(val);
             if (json_string['flag'] == "s") {
+                $('.ed-show-box').css('transform', 'scale(0)');
                 showResponse(json_string['msg'], "s");
             } else {
                 showResponse(json_string['msg'], json_string['flag']);
