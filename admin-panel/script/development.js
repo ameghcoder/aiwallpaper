@@ -335,7 +335,7 @@ $(document).ready(() => {
         update_title = $('#update-title').val();
         update_tags = $('#update-tags').val();
         update_description = $('#update-description').val();
-        update_category = $('#update-category').value;
+        update_category = $('#update-category').val();
         wall_id = $('.edsbib-id').html();
         let form = new FormData();
         form.append("update_title", update_title);
