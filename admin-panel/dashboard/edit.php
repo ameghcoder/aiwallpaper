@@ -1,14 +1,15 @@
 <?php
 // Start the session
 session_start();
-if(isset($_SESSION['username'])){
+if (isset($_SESSION['username'])) {
     $usernameTeam = $_SESSION['username'];
-} else{
+} else {
     header('location: /admin-panel/');
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@ if(isset($_SESSION['username'])){
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/admin-panel/component/' . 'in_head_file.html') ?>
     <title>Editor >> Wallpaper Access</title>
 </head>
+
 <body>
     <div class="container">
         <header class="top-header">
@@ -46,11 +48,12 @@ if(isset($_SESSION['username'])){
                                     <th>ID</th>
                                     <th>W Name</th>
                                     <th>Edit</th>
+                                    <th>Category</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody class="tbody">
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -58,11 +61,12 @@ if(isset($_SESSION['username'])){
                         <button type="button" class="lmfead">Load More</button>
                     </div>
                 </section>
-                <?php include($_SERVER['DOCUMENT_ROOT'].'/admin-panel/component/'.'footer.html') ?>
+                <?php include($_SERVER['DOCUMENT_ROOT'] . '/admin-panel/component/' . 'footer.html') ?>
             </main>
         </div>
     </div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/admin-panel/component/' . 'delete-edit-box-code.html'); ?>
     <script src="../script/pingurl.js"></script>
 </body>
+
 </html>
