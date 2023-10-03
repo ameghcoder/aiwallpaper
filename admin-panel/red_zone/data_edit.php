@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $_update_title = $_POST['update_title'];
     $_update_description = $_POST['update_description'];
     $_update_tags = $_POST['update_tags'];
+    $_update_category = $_POST['update_category'];
     $_wall_id = $_POST['wall_id'];
 
     $_update_name = test_input($_update_title);
@@ -19,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $_db_wall_name = explode('.', $res_01[0])[0];
     $_db_wall_ext = explode('.', $res_01[0])[1];
     if ($_db_wall_name == $_update_title) {
-        if (setData($_update_tags, $_wall_id)) {
+        if (setData($_update_tags, $_wall_id, $_update_category)) {
             if (setDesc($_update_description, $_wall_id)) {
                 if (createPage($_update_tags, $_update_description, $_update_title, $_update_name, $_wall_id)) {
                     msgSender("Page edited successfully.", "s");
@@ -34,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     } else {
         if (renameFunc($_update_title, $_wall_id)) {
-            if (setData($_update_tags, $_wall_id, $_update_title . '.' . $_db_wall_ext, '/image/' . $_update_title)) {
+            if (setData($_update_tags, $_wall_id, $_update_category, $_update_title . '.' . $_db_wall_ext, '/image/' . $_update_title)) {
                 if (setDesc($_update_description, $_wall_id)) {
                     if (createPage($_update_tags, $_update_description, $_update_title, $_update_name, $_wall_id)) {
                         msgSender("Page edited successfully.", "s");
@@ -79,13 +80,13 @@ function renameFunc($_new_title, $_id)
     }
 }
 
-function setData($_tag, $id, $_URL = '', $_PAGE = '')
+function setData($_tag, $id, $_category, $_URL = '', $_PAGE = '')
 {
     global $connection;
     if ($_URL == '' || $_PAGE == '') {
-        $query = "UPDATE wallpaperaccess SET tag='$_tag' WHERE id=$id";
+        $query = "UPDATE wallpaperaccess SET tag='$_tag', pw_category='$_category' WHERE id=$id";
     } else {
-        $query = "UPDATE wallpaperaccess SET tag='$_tag', URL='$_URL', PAGE='$_PAGE' WHERE id=$id";
+        $query = "UPDATE wallpaperaccess SET tag='$_tag', pw_category='$_category', URL='$_URL', PAGE='$_PAGE' WHERE id=$id";
     }
     $res = mysqli_query($connection, $query);
     if ($res) {

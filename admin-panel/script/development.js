@@ -288,6 +288,7 @@ $(document).ready(() => {
                 $('#update-title').val(title_from_json);
                 $('.edsbib-id').html(data_in_json[0]);
                 $('#update-tags').val(data_in_json[1]);
+                $('#update-category').val(data_in_json[6])
                 $('.ed-show-box').css('transform', 'scale(1)');
 
                 return_complete_data_for_specific_id_desc(e.target.getAttribute("data-id"))
@@ -334,11 +335,13 @@ $(document).ready(() => {
         update_title = $('#update-title').val();
         update_tags = $('#update-tags').val();
         update_description = $('#update-description').val();
+        update_category = $('#update-category').value;
         wall_id = $('.edsbib-id').html();
         let form = new FormData();
         form.append("update_title", update_title);
         form.append("update_tags", update_tags);
         form.append("update_description", update_description);
+        form.append("update_category", update_category);
         form.append("wall_id", wall_id);
         edit_data(form).then((val) => {
             let json_string = JSON.parse(val);
