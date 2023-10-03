@@ -47,8 +47,8 @@ if (isset($_SESSION['username'])) {
                                     <th>S.No.</th>
                                     <th>ID</th>
                                     <th>W Name</th>
-                                    <th>Edit</th>
                                     <th>Category</th>
+                                    <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
