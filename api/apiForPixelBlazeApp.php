@@ -30,7 +30,7 @@ if ($_SERVER['SERVER_NAME'] == 'aiwallpaper.online' && ($_SERVER["REQUEST_METHOD
         $_queryDB = "SELECT * FROM wallpaperaccess WHERE id=$_wall_id";
         $_resDB = mysqli_query($connection, $_queryDB);
 
-        return json_encode($_resDB);
+        echo json_encode($_resDB);
     } else if ($_related_tf) {
         $_query_title = $_GET["queryTitle"];
         $_how_much_need = $_GET["wallNeed"];
