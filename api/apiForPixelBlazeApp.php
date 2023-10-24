@@ -1,5 +1,6 @@
 <?php
 
+// https://aiwallpaper.online/api/apiForPixelBlazeApp?singleTf={true}&relatedTf={true}&recentTf={true}&categoryTf={true}&id={0}&howMuchNeed={0}&startsFrom={0}&query={spider%man}
 // _tf means true_or_false
 
 if ($_SERVER['SERVER_NAME'] == 'aiwallpaper.online' && ($_SERVER["REQUEST_METHOD"] == "GET")) {
@@ -35,6 +36,12 @@ if ($_SERVER['SERVER_NAME'] == 'aiwallpaper.online' && ($_SERVER["REQUEST_METHOD
     } else if ($_related_tf) {
         $_query_title = $_GET["queryTitle"];
         $_how_much_need = $_GET["wallNeed"];
+
+        $_queryDB = "SELECT * FROM wallpaperaccess WHERE MATCH(tag, URL) AGAINST('$_query_title') ORDER BY 1 DESC LIMIT $_starts_from_id, $_how_much_need";
+        $_resDB = mysqli_query($connection, $_queryDB);
+        $_resDB = mysqli_fetch_array($_resDB);
+
+        echo json_encode($_resDB);
     } else if ($_recent_tf) {
         $_starts_from_id = $_GET["startsFrom"];
         $_how_much_need = $_GET["wallNeed"];
