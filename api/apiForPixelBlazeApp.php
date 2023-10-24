@@ -16,10 +16,10 @@ if ($_SERVER['SERVER_NAME'] == 'aiwallpaper.online' && ($_SERVER["REQUEST_METHOD
     $_category_tf = false;
 
     // Default values
-    $_single_wallpaper_tf = $_GET['singleTf'];
-    $_related_tf = $_GET['relatedTf'];
-    $_recent_tf = $_GET['recentTf'];
-    $_category_tf = $_GET['categoryTf'];
+    $_single_wallpaper_tf = $_GET['singleTf'] ? true : false;
+    $_related_tf = $_GET['relatedTf'] ? true : false;
+    $_recent_tf = $_GET['recentTf'] ? true : false;
+    $_category_tf = $_GET['categoryTf'] ? true : false;
     $_wall_id = $_GET['id'];
     $_how_much_need = $_GET['howMuchNeed'];
     $_starts_from_id = $_GET['startsFrom'];
