@@ -56,8 +56,8 @@ if ($_SERVER['SERVER_NAME'] == 'aiwallpaper.online' && ($_SERVER["REQUEST_METHOD
             $_queryDB_00 = "SELECT MAX(id) FROM wallpaperaccess";
             $_resDB_00 = mysqli_query($connection, $_queryDB_00);
             $_resDB_00 = mysqli_fetch_array($_resDB_00);
-            $_starts_from_id = $_resDB_00['id'];
-            echo json_encode($_resDB_00);
+            $_starts_from_id = $_resDB_00['MAX(id)'];
+            // echo json_encode($_resDB_00);
         }
 
         $_queryDB = "SELECT * FROM wallpaperaccess ORDER BY 1 DESC LIMIT $_starts_from_id, $_how_much_need";
