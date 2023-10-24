@@ -51,9 +51,32 @@ if ($_SERVER['SERVER_NAME'] == 'aiwallpaper.online' && ($_SERVER["REQUEST_METHOD
     } else if ($_recent_tf) {
         $_starts_from_id = $_GET["startsFrom"];
         $_how_much_need = $_GET["wallNeed"];
+
+        $_queryDB = "SELECT * FROM wallpaperaccess ORDER BY 1 DESC LIMIT $_starts_from_id, $_how_much_need";
+        $_resDB = mysqli_query($connection, $_queryDB);
+        $_resDB_Data = mysqli_fetch_all($_resDB);
+        $_resDB_count = mysqli_num_rows($_resDB);
+
+        if ($_resDB_count > 0) {
+            echo json_encode($_resDB_Data);
+        } else {
+            echo json_encode(array("msg" => "End"));
+        }
     } else if ($_category_tf) {
         $_query_title = $_GET["queryTitle"];
         $_how_much_need = $_GET["wallNeed"];
+        $_starts_from_id = $_GET["startsFrom"];
+
+        $_queryDB = "SELECT * FROM wallpaperaccess WHERE pw_category='$_query_title' ORDER BY 1 DESC LIMIT $_starts_from_id, $_how_much_need";
+        $_resDB = mysqli_query($connection, $_queryDB);
+        $_resDB_Data = mysqli_fetch_all($_resDB);
+        $_resDB_count = mysqli_num_rows($_resDB);
+
+        if ($_resDB_count > 0) {
+            echo json_encode($_resDB_Data);
+        } else {
+            echo json_encode(array("msg" => "End"));
+        }
     }
 
 }
