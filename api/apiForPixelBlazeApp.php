@@ -25,12 +25,13 @@ if ($_SERVER['SERVER_NAME'] == 'aiwallpaper.online' && ($_SERVER["REQUEST_METHOD
     $_starts_from_id = $_GET['startsFrom'];
     $_query_title = $_GET['query'];
 
+
     if ($_single_wallpaper_tf) {
         $_wall_id = $_GET["id"];
 
         $_queryDB = "SELECT * FROM wallpaperaccess WHERE id=$_wall_id";
         $_resDB = mysqli_query($connection, $_queryDB);
-        $_resDB = mysqli_fetch_array($_resDB);
+        $_resDB = mysqli_fetch_all($_resDB);
 
         echo json_encode($_resDB);
     } else if ($_related_tf) {
