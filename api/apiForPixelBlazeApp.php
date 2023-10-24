@@ -39,7 +39,7 @@ if ($_SERVER['SERVER_NAME'] == 'aiwallpaper.online' && ($_SERVER["REQUEST_METHOD
 
         $_queryDB = "SELECT * FROM wallpaperaccess WHERE MATCH(tag, URL) AGAINST('$_query_title') ORDER BY 1 DESC LIMIT $_starts_from_id, $_how_much_need";
         $_resDB = mysqli_query($connection, $_queryDB);
-        $_resDB = mysqli_fetch_array($_resDB);
+        $_resDB = mysqli_fetch_all($_resDB);
 
         echo json_encode($_resDB);
     } else if ($_recent_tf) {
